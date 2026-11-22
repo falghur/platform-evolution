@@ -1,0 +1,4 @@
+Aula 10 Godot 4 - Efeitos sonoros originais
+
+Copie attack.wav, coin.wav e hurt.wav para res://assets/audio/ no seu projeto.
+AudioStreamPlayer os reproduzira por codigo.

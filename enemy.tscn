@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cgf52p5cywbng"]
+
+[ext_resource type="Script" uid="uid://wijje8f8o6ph" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpwsv"]
+size = Vector2(28, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o6wm"]
+size = Vector2(32, 34)
+
+[node name="Enemy" type="Area2D" unique_id=1235725450]
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=493928032]
+position = Vector2(650, 455)
+shape = SubResource("RectangleShape2D_fpwsv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=589667602]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+color = Color(1, 0, 0, 1)
+
+[node name="ContactHitbox" type="Area2D" parent="." unique_id=2056072840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactHitbox" unique_id=228660063]
+shape = SubResource("RectangleShape2D_4o6wm")

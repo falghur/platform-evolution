@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://ce7mjqvsldic1"]
+
+[ext_resource type="Script" uid="uid://b0eeqgcj4xt7k" path="res://main.gd" id="1_n8hyc"]
+[ext_resource type="PackedScene" uid="uid://1qktk13txwis" path="res://player.tscn" id="2_eiivm"]
+[ext_resource type="PackedScene" uid="uid://bxirpei3bbr0q" path="res://coin.tscn" id="3_p4ecc"]
+[ext_resource type="PackedScene" uid="uid://cgf52p5cywbng" path="res://enemy.tscn" id="4_4x2ic"]
+[ext_resource type="Script" uid="uid://b3n2jgkec1q0i" path="res://audio_controller.gd" id="5_576va"]
+[ext_resource type="AudioStream" uid="uid://chohj0qlgima7" path="res://godot_aula10_sons/attack.wav" id="6_0eu5p"]
+[ext_resource type="AudioStream" uid="uid://naplkpxx8pt5" path="res://godot_aula10_sons/coin.wav" id="7_fy7lv"]
+[ext_resource type="AudioStream" uid="uid://dpf0bwyp7gcnj" path="res://godot_aula10_sons/hurt.wav" id="8_ibitd"]
+[ext_resource type="PackedScene" uid="uid://b83hxwb3r5g8w" path="res://checkpoint2.tscn" id="9_wos53"]
+[ext_resource type="PackedScene" uid="uid://b3hjjuefry3c1" path="res://hazard2.tscn" id="10_t0ole"]
+[ext_resource type="PackedScene" uid="uid://cbapjfm7so5su" path="res://finish.tscn" id="11_hxl1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o6wm"]
+size = Vector2(1800, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwy1x"]
+size = Vector2(180, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpwsv"]
+font_size = 24
+
+[node name="main" type="Node2D" unique_id=305172817]
+script = ExtResource("1_n8hyc")
+
+[node name="player" parent="." unique_id=1512362965 instance=ExtResource("2_eiivm")]
+position = Vector2(250, 446)
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=1804899361]
+position = Vector2(900, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=1536679975]
+shape = SubResource("RectangleShape2D_4o6wm")
+
+[node name="ColorRect" type="ColorRect" parent="ground" unique_id=904838414]
+offset_left = -900.0
+offset_top = -30.0
+offset_right = 900.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="plataforma" type="StaticBody2D" parent="." unique_id=928122157]
+position = Vector2(400, 405)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma" unique_id=649915428]
+shape = SubResource("RectangleShape2D_vwy1x")
+
+[node name="ColorRect" type="ColorRect" parent="plataforma" unique_id=1038291714]
+offset_left = -90.0
+offset_top = -12.0
+offset_right = 90.0
+offset_bottom = 12.0
+color = Color(0.3954715, 0.8551202, 0, 1)
+
+[node name="plataforma2" type="StaticBody2D" parent="." unique_id=1662550982]
+position = Vector2(660, 345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma2" unique_id=1401438511]
+shape = SubResource("RectangleShape2D_vwy1x")
+
+[node name="ColorRect" type="ColorRect" parent="plataforma2" unique_id=135873450]
+offset_left = -90.0
+offset_top = -12.0
+offset_right = 90.0
+offset_bottom = 12.0
+color = Color(0.3954715, 0.8551202, 0, 1)
+
+[node name="plataforma3" type="StaticBody2D" parent="." unique_id=460920107]
+position = Vector2(930, 285)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma3" unique_id=1378476329]
+shape = SubResource("RectangleShape2D_vwy1x")
+
+[node name="ColorRect" type="ColorRect" parent="plataforma3" unique_id=1736895657]
+offset_left = -90.0
+offset_top = -12.0
+offset_right = 90.0
+offset_bottom = 12.0
+color = Color(0.3954715, 0.8551202, 0, 1)
+
+[node name="plataforma4" type="StaticBody2D" parent="." unique_id=250242255]
+position = Vector2(1200, 345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma4" unique_id=96944529]
+shape = SubResource("RectangleShape2D_vwy1x")
+
+[node name="ColorRect" type="ColorRect" parent="plataforma4" unique_id=1032620736]
+offset_left = -90.0
+offset_top = -12.0
+offset_right = 90.0
+offset_bottom = 12.0
+color = Color(0.3954715, 0.8551202, 0, 1)
+
+[node name="coin" parent="." unique_id=1427822374 instance=ExtResource("3_p4ecc")]
+
+[node name="coin2" parent="." unique_id=1041239562 instance=ExtResource("3_p4ecc")]
+position = Vector2(400, 360)
+
+[node name="coin3" parent="." unique_id=1794092895 instance=ExtResource("3_p4ecc")]
+position = Vector2(930, 240)
+
+[node name="coin4" parent="." unique_id=1169656081 instance=ExtResource("3_p4ecc")]
+position = Vector2(660, 300)
+
+[node name="coin5" parent="." unique_id=632162883 instance=ExtResource("3_p4ecc")]
+position = Vector2(1200, 300)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=438380132]
+
+[node name="CoinLabel" type="Label" parent="HUD" unique_id=1184450119]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+text = "Moedas
+"
+label_settings = SubResource("LabelSettings_fpwsv")
+
+[node name="HealthLabel" type="Label" parent="HUD" unique_id=438691860]
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 60.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 24
+text = "Vida:"
+
+[node name="VictoryPanel" type="PanelContainer" parent="HUD" unique_id=194186713]
+custom_minimum_size = Vector2(360, 200)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/VictoryPanel" unique_id=893961794]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="VictoryLabel" type="Label" parent="HUD/VictoryPanel/VBoxContainer" unique_id=1358998038]
+layout_mode = 2
+text = "Fase concluida!"
+horizontal_alignment = 1
+
+[node name="Nexbutton" type="Button" parent="HUD/VictoryPanel/VBoxContainer" unique_id=2133625862]
+layout_mode = 2
+text = "Proxima Fase
+"
+
+[node name="retrybutton" type="Button" parent="HUD/VictoryPanel/VBoxContainer" unique_id=667969582]
+layout_mode = 2
+text = "Tentar novamente"
+
+[node name="Enemy" parent="." unique_id=1235725450 instance=ExtResource("4_4x2ic")]
+position = Vector2(660, 455)
+
+[node name="AudioController" type="Node" parent="." unique_id=900520545]
+script = ExtResource("5_576va")
+attack_sound = ExtResource("6_0eu5p")
+coin_sound = ExtResource("7_fy7lv")
+hurt_sound = ExtResource("8_ibitd")
+
+[node name="Checkpoint" parent="." unique_id=720027890 instance=ExtResource("9_wos53")]
+position = Vector2(720, 445)
+
+[node name="Checkpoint2" parent="." unique_id=2081959502 instance=ExtResource("9_wos53")]
+position = Vector2(1440, 445)
+
+[node name="Espinhos" parent="." unique_id=739253456 instance=ExtResource("10_t0ole")]
+position = Vector2(1000, 460)
+
+[node name="Finish" parent="." unique_id=1103159883 instance=ExtResource("11_hxl1v")]
+position = Vector2(1700, 430)

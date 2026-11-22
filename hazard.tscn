@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dyjn2cmhwlggt"]
+
+[ext_resource type="PackedScene" uid="uid://b3hjjuefry3c1" path="res://hazard2.tscn" id="1_0qld2"]
+
+[node name="armadilhas" type="Node2D" unique_id=1188876709]
+
+[node name="Espinhos" parent="." unique_id=739253456 instance=ExtResource("1_0qld2")]

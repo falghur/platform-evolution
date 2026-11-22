@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b3hjjuefry3c1"]
+
+[ext_resource type="Script" uid="uid://c4a8dqw4h7fc8" path="res://hazard.gd" id="1_6s6bq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpwsv"]
+size = Vector2(80, 20)
+
+[node name="Espinhos" type="Area2D" unique_id=739253456]
+script = ExtResource("1_6s6bq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=976389989]
+shape = SubResource("RectangleShape2D_fpwsv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=353871379]
+offset_left = -40.0
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 10.0
+color = Color(1, 0, 0, 1)
